@@ -51,18 +51,28 @@
       const yellow = document.querySelector(".yellow");
       const green = document.querySelector(".green");
 
-      window.setTimeout(() => {
-        yellow.classList.remove("yellow");
-        green.classList.remove("green");
-        setTimeout(() => {
+      function lamp() {
+        window.setTimeout(() => {
+          red.classList.add("red");
+          yellow.classList.remove("yellow");
+          green.classList.remove("green");
+          setTimeout(() => {
             red.classList.remove("red");
             yellow.classList.add("yellow");
             green.classList.remove("green");
             setTimeout(() => {
-                
-            }, 900);
-        }, 600)
-      }, 300);
+              red.classList.remove("red");
+              yellow.classList.remove("yellow");
+              green.classList.add("green");
+              setInterval(lamp())
+            }, 9000);
+          }, 6000);
+        }, 3000);
+      }
+    //   setInterval(() => {
+    //     lamp()
+    //   }, 1000);
+    lamp()
     </script>
   </body>
 </html>

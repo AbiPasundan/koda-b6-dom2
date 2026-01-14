@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lampu Merah</title>
+    <style>
+      #lamp {
+        margin: auto;
+        width: 300px;
+        height: 300px;
+        border: 3px solid tomato;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #lamp .red {
+        background-color: red;
+        border: 3px solid tomato;
+        border-radius: 13px;
+      }
+      #lamp .yellow {
+        background-color: yellow;
+        border: 3px solid darkorange;
+        border-radius: 13px;
+      }
+      #lamp .green {
+        background-color: green;
+        border: 3px solid darkolivegreen;
+        border-radius: 13px;
+      }
+
+      #lamp .size {
+        border-radius: 13px;
+        width: 100px;
+        height: 100px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="lamp">
+      <div class="red size"></div>
+      <div class="yellow size"></div>
+      <div class="green size"></div>
+    </div>
+    <script>
+      const parent = document.getElementById("lamp");
+      const red = document.querySelector(".red");
+      const yellow = document.querySelector(".yellow");
+      const green = document.querySelector(".green");
+
+      window.setTimeout(() => {
+        yellow.classList.remove("yellow");
+        green.classList.remove("green");
+        setTimeout(() => {
+            red.classList.remove("red");
+            yellow.classList.add("yellow");
+            green.classList.remove("green");
+            setTimeout(() => {
+                
+            }, 900);
+        }, 600)
+      }, 300);
+    </script>
+  </body>
+</html>
